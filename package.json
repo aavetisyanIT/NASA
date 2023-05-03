@@ -1,0 +1,23 @@
+{
+	"name": "nasa",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"server": "npm start --prefix server",
+		"client": "npm start --prefix client",
+		"watch": "concurrently 'npm:server' 'npm:client' ",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aavetisyanIT/NASA.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/aavetisyanIT/NASA/issues"
+	},
+	"homepage": "https://github.com/aavetisyanIT/NASA#readme"
+}
