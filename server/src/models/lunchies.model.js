@@ -7,8 +7,8 @@ const launch = {
 	launchDate: new Date('December 10, 2028'),
 	destination: 'Kepler-442 b',
 	customers: ['NASA', 'NAVY'],
-	isUpcoming: true,
-	isSuccess: true,
+	upcoming: true,
+	success: true,
 };
 
 launches.set(launch.flightNumber, launch);
