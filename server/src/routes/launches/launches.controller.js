@@ -9,7 +9,7 @@ function httpAddNewLaunch(req, res) {
 	launch.launchDate = new Date(launch.launchDate);
 
 	addNewLaunch(launch);
-	return res.status(200).json(launch);
+	return res.status(201).json(launch);
 }
 
 module.exports = {
