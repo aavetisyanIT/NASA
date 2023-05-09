@@ -30,7 +30,14 @@ async function httpSubmitLaunch(launch) {
 }
 
 async function httpAbortLaunch(id) {
-	await fetch(`${API_URL}/launches/${id}`);
+	try {
+		return await fetch(`${API_URL}/launches/${id}`, { method: 'delete' });
+	} catch (error) {
+		console.log(error);
+		return {
+			ok: false,
+		};
+	}
 }
 
 export { httpGetPlanets, httpGetLaunches, httpSubmitLaunch, httpAbortLaunch };
