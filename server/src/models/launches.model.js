@@ -15,6 +15,10 @@ const launch = {
 
 launches.set(launch.flightNumber, launch);
 
+function launchExistsById(id) {
+	return launches.has(+id);
+}
+
 function getAllLaunches() {
 	return Array.from(launches.values());
 }
@@ -32,13 +36,16 @@ function addNewLaunch(launch) {
 	);
 }
 
-function deleteLaunchById(id) {
-	console.log('AAA launches', launches);
-	return launches.delete(Number(id));
+function abortLaunchById(id) {
+	const abortedLaunch = launches.get(+id);
+	abortedLaunch.success = false;
+	abortedLaunch.upcoming = false;
+	return abortedLaunch;
 }
 
 module.exports = {
+	launchExistsById,
 	getAllLaunches,
 	addNewLaunch,
-	deleteLaunchById,
+	abortLaunchById,
 };
