@@ -32,7 +32,13 @@ function addNewLaunch(launch) {
 	);
 }
 
+function deleteLaunchById(id) {
+	console.log('AAA launches', launches);
+	return launches.delete(Number(id));
+}
+
 module.exports = {
 	getAllLaunches,
 	addNewLaunch,
+	deleteLaunchById,
 };
