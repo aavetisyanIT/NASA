@@ -1,4 +1,5 @@
 const launches = require('./launches.mongo');
+const planets = require('./planets.mongo');
 
 let latestFlightNumber = 100;
 
@@ -24,6 +25,13 @@ async function getAllLaunches() {
 }
 
 async function saveLaunch(launch) {
+	const planet = await planets.findOne({
+		keplerName: launch.target,
+	});
+
+	if (!planet) {
+		throw new Error('No matching planet is found');
+	}
 	await launches.updateOne(
 		{
 			flightNumber: launch.flightNumber,
