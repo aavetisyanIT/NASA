@@ -8,7 +8,7 @@ describe('Test GET /launches', () => {
 	});
 	test('Is should respond with 200', async () => {
 		await request(app)
-			.get('/launches')
+			.get('/v1/launches')
 			.expect('Content-Type', /json/)
 			.expect(200);
 	});
